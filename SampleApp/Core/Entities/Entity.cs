@@ -5,7 +5,7 @@ using OpenTK.Windowing.GraphicsLibraryFramework;
 
 namespace SampleApp.Core.Entities
 {
-    public abstract class Entity : GameObject3D, IUpdateable
+    public abstract class Entity : GameObject, IUpdateable
     {
         public Vector3 Velocity { get; set; }
 

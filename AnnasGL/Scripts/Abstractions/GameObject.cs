@@ -2,8 +2,8 @@
 
 namespace AnnasGL.Scripts.Abstractions
 {
-    // GameObject3D representing position, rotation, and scale of an object in 3D space
-    public abstract class GameObject3D
+    // GameObject representing position, rotation, and scale of an object in 3D space
+    public abstract class GameObject
     {
         public Vector3 Position { get; set; }
 
@@ -11,7 +11,7 @@ namespace AnnasGL.Scripts.Abstractions
 
         public Vector3 Scale { get; set; }
 
-        public GameObject3D(Vector3 position, Vector3 rotation, Vector3 scale)
+        public GameObject(Vector3 position, Vector3 rotation, Vector3 scale)
         {
             Position = position;
             Rotation = rotation;

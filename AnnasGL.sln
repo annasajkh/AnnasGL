@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnasGL", "AnnasGL\AnnasGL.csproj", "{A614BC0A-9079-4680-91CE-BDA21C9CD04E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnnasGL", "AnnasGL\AnnasGL.csproj", "{A614BC0A-9079-4680-91CE-BDA21C9CD04E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "SampleApp\SampleApp.csproj", "{E8DD299A-821F-40B4-A954-4E61410B0283}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp", "SampleApp\SampleApp.csproj", "{E8DD299A-821F-40B4-A954-4E61410B0283}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1EC060CC-FB58-48A2-BA91-C705ECF3D9B8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

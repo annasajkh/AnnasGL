@@ -6,7 +6,7 @@ using OpenTK.Mathematics;
 
 namespace AnnasGL.Scripts.Components
 {
-    public class Mesh : GameObject3D, IDisposable
+    public class Mesh : GameObject, IDisposable
     {
         public VertexBufferObject VertexBufferObject { get; }
         public ElementBufferObject ElementBufferObject { get; }
