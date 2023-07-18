@@ -56,7 +56,7 @@ namespace AnnasGL.Scripts.Components
 
         public void Begin()
         {
-            Shader.Use();
+            Shader.Bind();
 
             GL.UniformMatrix4(Shader.GetUniformLocation("uView"), false, ref view);
             GL.UniformMatrix4(Shader.GetUniformLocation("uProjection"), false, ref projection);
@@ -83,7 +83,7 @@ namespace AnnasGL.Scripts.Components
 
         public void End()
         {
-            Shader.Unuse();
+            Shader.Unbind();
         }
 
         public void Dispose()

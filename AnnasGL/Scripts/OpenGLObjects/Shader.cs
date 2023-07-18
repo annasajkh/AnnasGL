@@ -1,8 +1,9 @@
+using AnnasGL.Scripts.Abstractions;
 using OpenTK.Graphics.OpenGL4;
 
 namespace AnnasGL.Scripts.OpenGLObjects
 {
-    public class Shader : IDisposable
+    public class Shader : OpenGLObject
     {
         public static int PositionAttributeSize { get; } = 3;
         public static int ColorAttributeSize { get; } = 4;
@@ -13,8 +14,6 @@ namespace AnnasGL.Scripts.OpenGLObjects
                                                       ColorAttributeSize +
                                                       NormalAttributeSize +
                                                       TextureCoordinateAttributeSize;
-
-        public int Handle { get; }
 
         private static Dictionary<string, int> uniformLocations = new Dictionary<string, int>();
 
@@ -92,12 +91,12 @@ namespace AnnasGL.Scripts.OpenGLObjects
             GL.DeleteShader(fragmentShader);
         }
 
-        public void Use()
+        public override void Bind()
         {
             GL.UseProgram(Handle);
         }
 
-        public void Unuse()
+        public override void Unbind()
         {
             GL.UseProgram(0);
         }
@@ -115,15 +114,12 @@ namespace AnnasGL.Scripts.OpenGLObjects
             }
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
+            Console.WriteLine($"Shader Program: {Handle} is Unloaded");
+
             GL.DeleteProgram(Handle);
             GC.SuppressFinalize(this);
-        }
-
-        ~Shader()
-        {
-            Dispose();
         }
     }
 }

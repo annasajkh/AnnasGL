@@ -58,7 +58,7 @@ namespace SampleApp
                                                geometryShaderPath: Path.GetFullPath("shaders/default.geom"),
                                                fragmentShaderPath: Path.GetFullPath("shaders/default.frag")));
 
-            renderer.Shader.Use();
+            renderer.Shader.Bind();
             GL.Uniform3(renderer.Shader.GetUniformLocation("material.ambient"), 1.25f, 1.25f, 1.25f);
             GL.Uniform3(renderer.Shader.GetUniformLocation("material.diffuse"), 1f, 1f, 1f);
             GL.Uniform3(renderer.Shader.GetUniformLocation("material.specular"), 1f, 1f, 1f);
@@ -67,7 +67,7 @@ namespace SampleApp
             GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.ambient"), 1.25f, 1.25f, 1.25f);
             GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.diffuse"), 1f, 1f, 1f);
             GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.specular"), 1f, 1f, 1f);
-            renderer.Shader.Unuse();
+            renderer.Shader.Unbind();
 
             //GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
 
@@ -131,7 +131,7 @@ namespace SampleApp
 
             Vector3 sunDirection = Vector3.Normalize(lightPosition - player.Position);
 
-            renderer.Shader.Use();
+            renderer.Shader.Bind();
 
 
             GL.Uniform3(renderer.Shader.GetUniformLocation("lightColor"), 1f, 1f, 1f);
@@ -140,7 +140,7 @@ namespace SampleApp
             GL.Uniform3(renderer.Shader.GetUniformLocation("uLightPos"), lightPosition);
             GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.direction"), sunDirection);
 
-            renderer.Shader.Unuse();
+            renderer.Shader.Unbind();
 
             lightPosition = player.Position + new Vector3((float)MathHelper.Cos(MathHelper.DegreesToRadians(time)), (float)MathHelper.Sin(MathHelper.DegreesToRadians(time)), 0) * 5000;
 
