@@ -1,0 +1,12 @@
+D:\Projects\C#\AnnasGL\AnnasGL\bin\Debug\net6.0\AnnasGL.deps.json
+D:\Projects\C#\AnnasGL\AnnasGL\bin\Debug\net6.0\AnnasGL.dll
+D:\Projects\C#\AnnasGL\AnnasGL\bin\Debug\net6.0\AnnasGL.pdb
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\AnnasGL.csproj.AssemblyReference.cache
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\AnnasGL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\AnnasGL.AssemblyInfoInputs.cache
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\AnnasGL.AssemblyInfo.cs
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\AnnasGL.csproj.CoreCompileInputs.cache
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\AnnasGL.dll
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\refint\AnnasGL.dll
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\AnnasGL.pdb
+D:\Projects\C#\AnnasGL\AnnasGL\obj\Debug\net6.0\ref\AnnasGL.dll
