@@ -54,9 +54,9 @@ namespace SampleApp
 
             // Setup the Renderer
 
-            renderer = new Renderer(new Shader(vertexShaderPath: Path.GetFullPath("shaders/default.vert"),
-                                               geometryShaderPath: Path.GetFullPath("shaders/default.geom"),
-                                               fragmentShaderPath: Path.GetFullPath("shaders/default.frag")));
+            renderer = new Renderer(new Shader(vertexShaderPath: Path.GetFullPath("resources/shaders/default.vert"),
+                                               geometryShaderPath: Path.GetFullPath("resources/shaders/default.geom"),
+                                               fragmentShaderPath: Path.GetFullPath("resources/shaders/default.frag")));
 
             renderer.Shader.Bind();
             GL.Uniform3(renderer.Shader.GetUniformLocation("material.ambient"), 1.25f, 1.25f, 1.25f);
@@ -79,7 +79,7 @@ namespace SampleApp
                                 cameraSize: new Vector2(width, height));
 
 
-            cubeTexture = new Texture2D(ImageResult.FromStream(File.OpenRead("textures/annasvirtual.png"), ColorComponents.RedGreenBlueAlpha));
+            cubeTexture = new Texture2D(ImageResult.FromStream(File.OpenRead("resources/textures/annasvirtual.png"), ColorComponents.RedGreenBlueAlpha));
             cube = new Mesh(Vector3.Zero, Vector3.Zero, new Vector3(50, 50, 50), BufferUsageHint.StaticDraw, MeshInstance.Cube);
             
             lightPosition = new Vector3(0, 100, 0);

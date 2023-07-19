@@ -31,3 +31,7 @@ D:\Projects\C#\AnnasGL\SampleApp\obj\Debug\net6.0\refint\SampleApp.dll
 D:\Projects\C#\AnnasGL\SampleApp\obj\Debug\net6.0\SampleApp.pdb
 D:\Projects\C#\AnnasGL\SampleApp\obj\Debug\net6.0\SampleApp.genruntimeconfig.cache
 D:\Projects\C#\AnnasGL\SampleApp\obj\Debug\net6.0\ref\SampleApp.dll
+D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\shaders\default.frag
+D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\shaders\default.geom
+D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\shaders\default.vert
+D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\textures\annasvirtual.png
