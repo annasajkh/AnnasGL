@@ -1,6 +1,6 @@
 ﻿namespace AnnasGL.Scripts.Interfaces
 {
-    internal interface IBindable
+    public interface IBindable
     {
         public void Bind();
 

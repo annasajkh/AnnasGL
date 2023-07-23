@@ -68,8 +68,8 @@ namespace AnnasGL.Scripts.Components
         });
 
 
-        public Vertex[] Vertices { get; private set; }
-        public Indices[] TriangleIndices { get; private set; }
+        public Vertex[] Vertices { get; }
+        public Indices[] TriangleIndices { get; }
 
         public MeshInstance(Vertex[] vertices, Indices[] triangleIndices)
         {
