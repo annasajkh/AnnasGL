@@ -18,8 +18,11 @@ namespace SampleApp
         private Player player;
 
         private Mesh cube;
+        private Mesh sun;
+
         private Texture2D cubeTexture;
-        
+        private Texture2D sunTexture;
+
         private Vector3 lightPosition;
         
         // 0 - 360
@@ -51,6 +54,13 @@ namespace SampleApp
 
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMinFilter.Linear);
+            
+            //GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
+        }
+
+        protected override void OnLoad()
+        {
+            base.OnLoad();
 
             // Setup the Renderer
 
@@ -60,36 +70,31 @@ namespace SampleApp
 
             renderer.Shader.Bind();
             GL.Uniform3(renderer.Shader.GetUniformLocation("material.ambient"), 1.25f, 1.25f, 1.25f);
-            GL.Uniform3(renderer.Shader.GetUniformLocation("material.diffuse"), 1f, 1f, 1f);
+            GL.Uniform3(renderer.Shader.GetUniformLocation("material.diffuse"), 0.5f, 0.5f, 0.5f);
             GL.Uniform3(renderer.Shader.GetUniformLocation("material.specular"), 1f, 1f, 1f);
             GL.Uniform1(renderer.Shader.GetUniformLocation("material.shininess"), 32f);
 
             GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.ambient"), 1.25f, 1.25f, 1.25f);
-            GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.diffuse"), 1f, 1f, 1f);
+            GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.diffuse"), 0.5f, 0.5f, 0.5f);
             GL.Uniform3(renderer.Shader.GetUniformLocation("dirLight.specular"), 1f, 1f, 1f);
             renderer.Shader.Unbind();
-
-            //GL.PolygonMode(MaterialFace.FrontAndBack, PolygonMode.Line);
-
 
             // Initialization
             player = new Player(position: Vector3.Zero,
                                 rotation: Vector3.Zero,
                                 scale: Vector3.One,
-                                cameraSize: new Vector2(width, height));
+                                cameraSize: new Vector2(windowWidth, windowHeight));
 
 
             cubeTexture = new Texture2D(ImageResult.FromStream(File.OpenRead("resources/textures/annasvirtual.png"), ColorComponents.RedGreenBlueAlpha));
+            sunTexture = new Texture2D(ImageResult.FromStream(File.OpenRead("resources/textures/sun.png"), ColorComponents.RedGreenBlueAlpha));
+
             cube = new Mesh(Vector3.Zero, Vector3.Zero, new Vector3(50, 50, 50), BufferUsageHint.StaticDraw, MeshInstance.Cube);
-            
+            sun = new Mesh(Vector3.Zero, Vector3.Zero, new Vector3(500, 1, 500), BufferUsageHint.StaticDraw, MeshInstance.Quad);
+
             lightPosition = new Vector3(0, 100, 0);
 
             vertexArrayObject = new VertexArrayObject();
-        }
-
-        protected override void OnLoad()
-        {
-            base.OnLoad();
         }
 
         protected override void OnResize(ResizeEventArgs resizeEventArgs)
@@ -110,8 +115,12 @@ namespace SampleApp
             base.OnUnload();
 
             renderer.Dispose();
+
             cube.Dispose();
             cubeTexture.Dispose();
+
+            sun.Dispose();
+            sunTexture.Dispose();
         }
 
         protected override void OnUpdateFrame(FrameEventArgs frameEventArgs)
@@ -144,6 +153,8 @@ namespace SampleApp
 
             lightPosition = player.Position + new Vector3((float)MathHelper.Cos(MathHelper.DegreesToRadians(time)), (float)MathHelper.Sin(MathHelper.DegreesToRadians(time)), 0) * 5000;
 
+            sun.Position = lightPosition + new Vector3((float)MathHelper.Cos(MathHelper.DegreesToRadians(time)), (float)MathHelper.Sin(MathHelper.DegreesToRadians(time)), 0) * 100;
+            sun.Rotation = new Vector3(0, 90, -MathHelper.RadiansToDegrees((float)MathHelper.Atan2(MathHelper.Cos(MathHelper.DegreesToRadians(time)), MathHelper.Sin(MathHelper.DegreesToRadians(time)))));
 
             cube.Rotation = new Vector3(x: cube.Rotation.X + (float)frameEventArgs.Time * 50, 
                                         y: 0, 
@@ -151,11 +162,11 @@ namespace SampleApp
 
             if (keyboardState.IsKeyDown(Keys.Up))
             {
-                time += (float)frameEventArgs.Time;
+                time += (float)frameEventArgs.Time * 100;
             }
             else if (keyboardState.IsKeyDown(Keys.Down))
             {
-                time -= (float)frameEventArgs.Time;
+                time -= (float)frameEventArgs.Time * 100;
             }
 
             if (keyboardState.IsKeyDown(Keys.P))
@@ -181,6 +192,13 @@ namespace SampleApp
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
             renderer.Begin();
+
+            GL.Enable(EnableCap.Blend);
+            GL.Disable(EnableCap.CullFace);
+
+            renderer.Draw(sun, sunTexture, vertexArrayObject);
+
+            GL.Clear(ClearBufferMask.DepthBufferBit);
 
             GL.Enable(EnableCap.Blend);
             GL.Disable(EnableCap.CullFace);

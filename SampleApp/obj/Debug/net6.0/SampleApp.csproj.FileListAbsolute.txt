@@ -35,3 +35,4 @@ D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\shaders\default.frag
 D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\shaders\default.geom
 D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\shaders\default.vert
 D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\textures\annasvirtual.png
+D:\Projects\C#\AnnasGL\SampleApp\bin\Debug\net6.0\resources\textures\sun.png
