@@ -37,22 +37,22 @@ namespace AnnasGL.Scripts.Utils
 
         }
 
-        public static uint[] IndicesBuilder(Indices[] indices)
+        public static uint[] IndicesBuilder(TriangleIndices[] triangleIndices)
         {
-            uint[] indicesResult = new uint[3 * indices.Length];
+            uint[] trianglesIndicesResult = new uint[3 * triangleIndices.Length];
 
             int index = 0;
 
-            for (int i = 0; i < indicesResult.Length; i += 3)
+            for (int i = 0; i < trianglesIndicesResult.Length; i += 3)
             {
-                indicesResult[i] = indices[index].FirstIndex;
-                indicesResult[i + 1] = indices[index].SecondIndex;
-                indicesResult[i + 2] = indices[index].ThirdIndex;
+                trianglesIndicesResult[i] = triangleIndices[index].FirstIndex;
+                trianglesIndicesResult[i + 1] = triangleIndices[index].SecondIndex;
+                trianglesIndicesResult[i + 2] = triangleIndices[index].ThirdIndex;
 
                 index++;
             }
 
-            return indicesResult;
+            return trianglesIndicesResult;
         }
     }
 }

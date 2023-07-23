@@ -1,12 +1,12 @@
 namespace AnnasGL.Scripts.Containers
 {
-    public struct Indices
+    public struct TriangleIndices
     {
         public uint FirstIndex { get; set; }
         public uint SecondIndex { get; set; }
         public uint ThirdIndex { get; set; }
 
-        public Indices(uint firstIndex, uint secondIndex, uint thirdIndex)
+        public TriangleIndices(uint firstIndex, uint secondIndex, uint thirdIndex)
         {
             FirstIndex = firstIndex;
             SecondIndex = secondIndex;
@@ -18,37 +18,37 @@ namespace AnnasGL.Scripts.Containers
             return $"Indices: [{FirstIndex}, {SecondIndex}, {ThirdIndex}]";
         }
 
-        public static Indices operator +(Indices indicesA, Indices indicesB)
+        public static TriangleIndices operator +(TriangleIndices indicesA, TriangleIndices indicesB)
         {
-            return new Indices(indicesA.FirstIndex + indicesB.FirstIndex,
+            return new TriangleIndices(indicesA.FirstIndex + indicesB.FirstIndex,
                                indicesA.SecondIndex + indicesB.SecondIndex,
                                indicesA.ThirdIndex + indicesB.ThirdIndex);
         }
 
-        public static Indices operator -(Indices indicesA, Indices indicesB)
+        public static TriangleIndices operator -(TriangleIndices indicesA, TriangleIndices indicesB)
         {
-            return new Indices(indicesA.FirstIndex - indicesB.FirstIndex,
+            return new TriangleIndices(indicesA.FirstIndex - indicesB.FirstIndex,
                                indicesA.SecondIndex - indicesB.SecondIndex,
                                indicesA.ThirdIndex - indicesB.ThirdIndex);
         }
 
-        public static Indices operator *(Indices indicesA, Indices indicesB)
+        public static TriangleIndices operator *(TriangleIndices indicesA, TriangleIndices indicesB)
         {
-            return new Indices(indicesA.FirstIndex * indicesB.FirstIndex,
+            return new TriangleIndices(indicesA.FirstIndex * indicesB.FirstIndex,
                                indicesA.SecondIndex * indicesB.SecondIndex,
                                indicesA.ThirdIndex * indicesB.ThirdIndex);
         }
 
-        public static Indices operator /(Indices indicesA, Indices indicesB)
+        public static TriangleIndices operator /(TriangleIndices indicesA, TriangleIndices indicesB)
         {
-            return new Indices(indicesA.FirstIndex / indicesB.FirstIndex,
+            return new TriangleIndices(indicesA.FirstIndex / indicesB.FirstIndex,
                                indicesA.SecondIndex / indicesB.SecondIndex,
                                indicesA.ThirdIndex / indicesB.ThirdIndex);
         }
 
-        public static Indices operator %(Indices indicesA, Indices indicesB)
+        public static TriangleIndices operator %(TriangleIndices indicesA, TriangleIndices indicesB)
         {
-            return new Indices(indicesA.FirstIndex % indicesB.FirstIndex,
+            return new TriangleIndices(indicesA.FirstIndex % indicesB.FirstIndex,
                                indicesA.SecondIndex % indicesB.SecondIndex,
                                indicesA.ThirdIndex % indicesB.ThirdIndex);
         }
