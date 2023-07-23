@@ -31,7 +31,7 @@ namespace AnnasGL.Scripts.Utils
             }
         }
 
-        public static void ApplyNormals(Vertex[] vertices, Indices[] triangleIndices, Matrix4 modelMatrix)
+        public static void ApplyNormals(Vertex[] vertices, TriangleIndices[] triangleIndices, Matrix4 modelMatrix)
         {
             for (int i = 0; i < triangleIndices.Length; i++)
             {

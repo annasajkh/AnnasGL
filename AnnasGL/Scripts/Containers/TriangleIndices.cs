@@ -15,42 +15,42 @@ namespace AnnasGL.Scripts.Containers
 
         public override string ToString()
         {
-            return $"Indices: [{FirstIndex}, {SecondIndex}, {ThirdIndex}]";
+            return $"Triangle Indices: [{FirstIndex}, {SecondIndex}, {ThirdIndex}]";
         }
 
-        public static TriangleIndices operator +(TriangleIndices indicesA, TriangleIndices indicesB)
+        public static TriangleIndices operator +(TriangleIndices TriangleIndicesA, TriangleIndices TriangleIndicesB)
         {
-            return new TriangleIndices(indicesA.FirstIndex + indicesB.FirstIndex,
-                               indicesA.SecondIndex + indicesB.SecondIndex,
-                               indicesA.ThirdIndex + indicesB.ThirdIndex);
+            return new TriangleIndices(TriangleIndicesA.FirstIndex + TriangleIndicesB.FirstIndex,
+                                       TriangleIndicesA.SecondIndex + TriangleIndicesB.SecondIndex,
+                                       TriangleIndicesA.ThirdIndex + TriangleIndicesB.ThirdIndex);
         }
 
-        public static TriangleIndices operator -(TriangleIndices indicesA, TriangleIndices indicesB)
+        public static TriangleIndices operator -(TriangleIndices TriangleIndicesA, TriangleIndices TriangleIndicesB)
         {
-            return new TriangleIndices(indicesA.FirstIndex - indicesB.FirstIndex,
-                               indicesA.SecondIndex - indicesB.SecondIndex,
-                               indicesA.ThirdIndex - indicesB.ThirdIndex);
+            return new TriangleIndices(TriangleIndicesA.FirstIndex - TriangleIndicesB.FirstIndex,
+                                       TriangleIndicesA.SecondIndex - TriangleIndicesB.SecondIndex,
+                                       TriangleIndicesA.ThirdIndex - TriangleIndicesB.ThirdIndex);
         }
 
-        public static TriangleIndices operator *(TriangleIndices indicesA, TriangleIndices indicesB)
+        public static TriangleIndices operator *(TriangleIndices TriangleIndicesA, TriangleIndices TriangleIndicesB)
         {
-            return new TriangleIndices(indicesA.FirstIndex * indicesB.FirstIndex,
-                               indicesA.SecondIndex * indicesB.SecondIndex,
-                               indicesA.ThirdIndex * indicesB.ThirdIndex);
+            return new TriangleIndices(TriangleIndicesA.FirstIndex * TriangleIndicesB.FirstIndex,
+                                       TriangleIndicesA.SecondIndex * TriangleIndicesB.SecondIndex,
+                                       TriangleIndicesA.ThirdIndex * TriangleIndicesB.ThirdIndex);
         }
 
-        public static TriangleIndices operator /(TriangleIndices indicesA, TriangleIndices indicesB)
+        public static TriangleIndices operator /(TriangleIndices TriangleIndicesA, TriangleIndices TriangleIndicesB)
         {
-            return new TriangleIndices(indicesA.FirstIndex / indicesB.FirstIndex,
-                               indicesA.SecondIndex / indicesB.SecondIndex,
-                               indicesA.ThirdIndex / indicesB.ThirdIndex);
+            return new TriangleIndices(TriangleIndicesA.FirstIndex / TriangleIndicesB.FirstIndex,
+                                       TriangleIndicesA.SecondIndex / TriangleIndicesB.SecondIndex,
+                                       TriangleIndicesA.ThirdIndex / TriangleIndicesB.ThirdIndex);
         }
 
-        public static TriangleIndices operator %(TriangleIndices indicesA, TriangleIndices indicesB)
+        public static TriangleIndices operator %(TriangleIndices TriangleIndicesA, TriangleIndices TriangleIndicesB)
         {
-            return new TriangleIndices(indicesA.FirstIndex % indicesB.FirstIndex,
-                               indicesA.SecondIndex % indicesB.SecondIndex,
-                               indicesA.ThirdIndex % indicesB.ThirdIndex);
+            return new TriangleIndices(TriangleIndicesA.FirstIndex % TriangleIndicesB.FirstIndex,
+                                       TriangleIndicesA.SecondIndex % TriangleIndicesB.SecondIndex,
+                                       TriangleIndicesA.ThirdIndex % TriangleIndicesB.ThirdIndex);
         }
     }
 }
