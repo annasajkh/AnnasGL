@@ -1,12 +1,13 @@
 using AnnasGL.Scripts.Abstractions;
 using AnnasGL.Scripts.BufferObjects;
+using AnnasGL.Scripts.Interfaces;
 using AnnasGL.Scripts.Utils;
 using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
 
 namespace AnnasGL.Scripts.Components
 {
-    public class Mesh : GameObject, IDisposable
+    public class Mesh : GameObject, IDisposable, IBindable
     {
         public VertexBufferObject VertexBufferObject { get; }
         public ElementBufferObject ElementBufferObject { get; }

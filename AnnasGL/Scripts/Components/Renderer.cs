@@ -32,6 +32,7 @@ namespace AnnasGL.Scripts.Components
                 view = value;
             }
         }
+
         public Matrix4 Projection
         {
             get
